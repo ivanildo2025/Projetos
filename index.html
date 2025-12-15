@@ -3,45 +3,283 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lista de Links</title>
+  <title>Ferramentas e Utilitários de Desenvolvimento</title>
   <style>
+    /* Reset e configurações gerais */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
     body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      max-width: 900px;
       margin: 0 auto;
       padding: 20px;
-      background-color: #f4f4f4;
-    }
-    h1 {
-      text-align: center;
+      background-color: #f8f9fa;
       color: #333;
+      line-height: 1.6;
     }
+    
+    /* Cabeçalho */
+    header {
+      text-align: center;
+      padding: 30px 0;
+      margin-bottom: 30px;
+      background: linear-gradient(135deg, #1a73e8, #4a90e2);
+      color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    
+    .subtitle {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    
+    /* Conteúdo principal */
+    main {
+      background-color: white;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    }
+    
+    /* Lista de links */
+    .links-container {
+      margin-top: 20px;
+    }
+    
+    .link-category {
+      margin-bottom: 25px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .link-category:last-child {
+      border-bottom: none;
+    }
+    
+    .category-title {
+      font-size: 1.3rem;
+      color: #1a73e8;
+      margin-bottom: 15px;
+      padding-left: 10px;
+      border-left: 4px solid #1a73e8;
+    }
+    
     ul {
       list-style: none;
-      padding: 0;
     }
-    li {
-      margin: 10px 0;
+    
+    .link-item {
+      display: flex;
+      align-items: center;
+      margin: 12px 0;
+      padding: 15px;
+      background-color: #f8f9fa;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      border-left: 4px solid transparent;
     }
-    a {
+    
+    .link-item:hover {
+      background-color: #e8f0fe;
+      transform: translateX(5px);
+      border-left: 4px solid #1a73e8;
+    }
+    
+    .link-icon {
+      margin-right: 15px;
+      font-size: 1.5rem;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #e8f0fe;
+      border-radius: 50%;
+      color: #1a73e8;
+    }
+    
+    .link-content {
+      flex-grow: 1;
+    }
+    
+    .link-content a {
       text-decoration: none;
-      color: #0066cc;
-      font-size: 18px;
+      color: #1a73e8;
+      font-weight: 600;
+      font-size: 1.1rem;
+      display: block;
+      margin-bottom: 5px;
     }
-    a:hover {
+    
+    .link-content a:hover {
       text-decoration: underline;
-      color: #003366;
+    }
+    
+    .link-description {
+      color: #666;
+      font-size: 0.95rem;
+    }
+    
+    /* Rodapé */
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid #eee;
+      color: #777;
+      font-size: 0.9rem;
+    }
+    
+    /* Responsividade */
+    @media (max-width: 768px) {
+      body {
+        padding: 15px;
+      }
+      
+      h1 {
+        font-size: 2rem;
+      }
+      
+      main {
+        padding: 20px;
+      }
+      
+      .link-item {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .link-icon {
+        margin-bottom: 10px;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.7rem;
+      }
+      
+      .category-title {
+        font-size: 1.2rem;
+      }
+      
+      .link-content a {
+        font-size: 1rem;
+      }
     }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <h1>Lista de Links</h1>
-  <ul>
-    <li><a href="/projetos/nginx/" aria-label="Menu pra o servidor ">menu para nginx ("engine x"), é um HTTP web server.</a> veja <a href="https://nginx.org/en/download.html" aria-label="Home page">nginx.org</a></li>
-    <li><a href="/projetos/debian/" aria-label="Atualização Debian 12 para debian 13">Atualizar debian</a></li>
-   <li>Projeto <a href="/plutão/">plutão</a> é um sistema operacional unix like para clientes</li>
+  <header>
+    <h1>Ferramentas e Utilitários</h1>
+    <p class="subtitle">Coleção de scripts e aplicativos para diferentes plataformas de desenvolvimento</p>
+  </header>
+  
+  <main>
+    <div class="links-container">
+      <div class="link-category">
+        <h2 class="category-title">Ferramentas Web</h2>
+        <ul>
+          <li class="link-item">
+            <div class="link-icon">
+              <i class="fas fa-globe"></i>
+            </div>
+            <div class="link-content">
+              <a href="/aplicativosWeb" aria-label="Acessar aplicativos web">Pequenas ferramentas online</a>
+              <p class="link-description">Utilitários web para diversas tarefas de desenvolvimento e automação</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="link-category">
+        <h2 class="category-title">Scripts para Windows</h2>
+        <ul>
+          <li class="link-item">
+            <div class="link-icon">
+              <i class="fab fa-windows"></i>
+            </div>
+            <div class="link-content">
+              <a href="/bat/" aria-label="Acessar scripts para Windows">Scripts batch para Microsoft Windows</a>
+              <p class="link-description">Automatização de tarefas no Windows usando arquivos .bat</p>
+            </div>
+          </li>
+          <li class="link-item">
+            <div class="link-icon">
+              <i class="fas fa-code"></i>
+            </div>
+            <div class="link-content">
+              <a href="/autoIt3/" aria-label="Acessar utilitários AutoIt3">Utilitários AutoIt3 para Windows</a>
+              <p class="link-description">Programas de automação desenvolvidos com AutoIt3 para Windows</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="link-category">
+        <h2 class="category-title">Scripts para Unix/Linux</h2>
+        <ul>
+          <li class="link-item">
+            <div class="link-icon">
+              <i class="fab fa-linux"></i>
+            </div>
+            <div class="link-content">
+              <a href="/shell/" aria-label="Acessar scripts para sistemas Unix">Scripts para sistemas Unix-like</a>
+              <p class="link-description">Shell scripts para automação em sistemas Unix, Linux e macOS</p>
+            </div>
+          </li>
+          <li class="link-item">
+            <div class="link-icon">
+              <i class="fas fa-terminal"></i>
+            </div>
+            <div class="link-content">
+              <a href="#" aria-label="Acessar utilitários para Unix" onclick="alert('Link em desenvolvimento'); return false;">Utilitários para sistemas Unix-like</a>
+              <p class="link-description">Ferramentas e utilitários para sistemas operacionais baseados em Unix (em desenvolvimento)</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </main>
+  
+  <footer>
+    <p>Coleção de ferramentas para desenvolvedores • Atualizado em <span id="current-year">2025</span></p>
+    <p style="margin-top: 5px; font-size: 0.8rem;">Os links marcados estão em fase de desenvolvimento</p>
+  </footer>
+
+  <script>
+    // Adicionar o ano atual no rodapé
+    document.getElementById('current-year').textContent = new Date().getFullYear();
     
-  </ul>
-<script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"9ae74c07bc147f14","version":"2025.9.1","r":1,"token":"1f070e2f4baa45f0849d15986511249b","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}' crossorigin="anonymous"></script>
+    // Melhorar interação dos links
+    document.querySelectorAll('.link-item').forEach(item => {
+      item.addEventListener('click', function(e) {
+        // Se não clicou diretamente no link, redireciona para o link
+        if (e.target.tagName !== 'A' && !e.target.closest('a')) {
+          const link = this.querySelector('a');
+          if (link && link.href && !link.href.includes('#')) {
+            window.location.href = link.href;
+          }
+        }
+      });
+    });
+  </script>
+  
+  <!-- Script do Cloudflare (mantido do original) -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"9ae74c07bc147f14","version":"2025.9.1","r":1,"token":"1f070e2f4baa45f0849d15986511249b","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}' crossorigin="anonymous"></script>
 </body>
 </html>
